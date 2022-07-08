@@ -1,11 +1,11 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
-  let res = await (await fetch('https://api.lolhuman.xyz/api/quotes/islami?apikey=e54205a4ca2caa368cc067bb'))
+  let res = await (await fetch('https://zahirr-web.herokuapp.com/api/randomquote/muslim?apikey=zahirgans'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
-  if(!json.result[0]) throw json
-  let { result } = json.result[0]
-m.reply(`${json.result}`)
+  if(!json.result.data[0]) throw json
+  let { result } = json.result.data[0]
+m.reply(`${json.result.data}`)
 }
 handler.help = ['quotes-islam']
 handler.tags = ['quotes']
