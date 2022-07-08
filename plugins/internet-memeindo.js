@@ -1,8 +1,10 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, command }) => {
-	let url = 'https://api.lolhuman.xyz/api/meme/memeindo?apikey=Apikeymu'
-	conn.sendButton(m.chat, 'Mim Indo :v', wm, await(await fetch(url)).buffer(), [['Next',`.${command}`]],m)
+	let url = 'https://candaan-api-h590oa540-ardhptr21.vercel.app/api/image/random'
+	if (!res.ok) throw await res.text()
+        let json = await res.json()
+        conn.sendButton(m.chat, 'mim indo :v', author, json.data.url, [['NEXT', `${usedPrefix}meme`]], m)
 }
 handler.command = /^(meme)$/i
 handler.tags = ['internet']
