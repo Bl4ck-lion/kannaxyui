@@ -1,10 +1,11 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, command }) => {
-	let url = 'https://candaan-api-h590oa540-ardhptr21.vercel.app/api/image/random'
+	let res = 'https://zahirr-web.herokuapp.com/api/random/meme?apikey=zahirgans'
 	if (!res.ok) throw await res.text()
         let json = await res.json()
-        conn.sendButton(m.chat, 'mim indo :v', author, json.data.url, [['NEXT', `${usedPrefix}meme`]], m)
+        let meme = json.result.url
+        conn.sendButton(m.chat, 'mim indo :v', author, meme, [['NEXT', `.meme`]], m)
 }
 handler.command = /^(meme)$/i
 handler.tags = ['internet']
