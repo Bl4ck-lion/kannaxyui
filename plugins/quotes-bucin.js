@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command }) => conn.sendButton(m.chat
     ['Next', `${usedPrefix+command}`], 
 ], m)
 
-handler.help = ['Bucin']
+handler.help = ['q-bucin']
 handler.tags = ['quotes']
 handler.command = /^(q-bucin)$/i
 
