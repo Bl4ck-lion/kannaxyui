@@ -10,7 +10,7 @@ ${pickRandom(global.islam)}
 `
      const message = {
             document: { url: thumb },
-            jpegThumbnail: await (await fetch(thumb)).buffer(), fileName: '─────〔 𝗕𝗔𝗖𝗢𝗧 〕─────', mimetype: dpdf, fileLength: fsizedoc, pageCount: fpagedoc,
+            jpegThumbnail: await (await fetch(thumb)).buffer(), fileName: '─────〔 QUOTE 〕─────', mimetype: dpdf, fileLength: fsizedoc, pageCount: fpagedoc,
             caption: anu,
             footer: wm,
             templateButtons: [
