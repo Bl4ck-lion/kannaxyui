@@ -1,14 +1,41 @@
-import fetch from 'node-fetch'
-let handler = async(m, { conn, text }) => {
-  let res = await (await fetch('https://api.lolhuman.xyz/api/random/katabijak?apikey=Apikeymu'))
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-  if(!json.result[0]) throw json
-  let { result } = json.result[0]
-m.reply(`${json.result}`)
+const quotes = require('../lib/jagokata')
+let handler = async (m, { command, args, usedPrefix }) => {
+    let er = `contoh:\n\n${usedPrefix + command} cinta
+
+Opsi Tersedia:
+• cinta
+• rindu
+• mimpi
+• sendiri
+• sabar
+• kesedihan
+• pernikahan
+• kemerdekaan`
+    if (!args[0]) throw er
+    switch (args[0].toLowerCase()) {
+        case 'cinta':
+        case 'rindu':
+        case 'mimpi':
+        case 'sendiri':
+        case 'sabar':
+        case 'kesedihan':
+        case 'pernikahan':
+        case 'kemerdekaan':
+            quotes(args[0].toLowerCase()).then(res => {
+                let data = JSON.stringify(res)
+                let json = JSON.parse(data)
+                let random = Math.floor(Math.random() * json.data.length)
+                let hasil = json.data[random]
+                let { author, bio, quote } = hasil
+                m.reply(`“${quote}”\n\n${author} - ${bio}`)
+            })
+            break
+        default:
+            throw er
+    }
 }
-handler.help = ['katabijak']
+handler.help = ['katabijak'].map(v => v + ' <opsi>')
 handler.tags = ['quotes']
-handler.command = /^(katabijak)$/i
+handler.command = /^(katabijak|jagokata)$/i
 
 export default handler
