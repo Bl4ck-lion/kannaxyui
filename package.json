@@ -1,7 +1,7 @@
 {
-    "name": "Kanna-BOT",
+    "name": "Putri-Cantik",
     "version": "3.0.0",
-    "description": "RPG WhatsApp BOT",
+    "description": "WhatsApp BOT By Putri",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -26,20 +26,20 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/ImYanXiao/Kanna-MultiDevice",
+    "homepage": "https://github.com/Bl4ck-lion/kannaxyui",
     "author": {
-        "name": "ImYanXiao"
+        "name": "Bl4ck-lion"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ImYanXiao/Kanna-MultiDevice.git"
+        "url": "git+https://github.com/Bl4ck-lion/kannaxyui"
     },
     "bugs": {
-        "url": "https://github.com/ImYanXiao/Kanna-MultiDevice/issues"
+        "url": "https://github.com/Bl4ck-lion/kannaxyui"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "^4.2.0",
+        "@adiwajshing/baileys": "^4.1.0",
         "@bochilteam/scraper": "^2.0.0",
         "@ibaraki-douji/pixivts": "^2.0.2",
         "acrcloud": "^1.4.0",
